@@ -1,0 +1,32 @@
+{
+  "name": "node-config-loader",
+  "version": "0.0.1",
+  "description": "Scan directories and loads json and yaml files",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zerkalica/node-config-loader.git"
+  },
+  "keywords": [
+    "yaml",
+    "json",
+    "config",
+    "loader"
+  ],
+  "author": "Stefan Zerkalica <zerkalica@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zerkalica/node-config-loader/issues"
+  },
+  "homepage": "https://github.com/zerkalica/node-config-loader",
+  "dependencies": {
+    "yamljs": "^0.2.1"
+  },
+  "devDependencies": {
+    "chai": "^1.9.2",
+    "mocha": "^2.0.1"
+  }
+}
