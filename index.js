@@ -1,1 +1,1 @@
-module.exports = require('./node-config-loader');
+module.exports = require('./lib/node-config-loader');
