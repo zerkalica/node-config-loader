@@ -22,11 +22,12 @@
     "url": "https://github.com/zerkalica/node-config-loader/issues"
   },
   "homepage": "https://github.com/zerkalica/node-config-loader",
-  "dependencies": {
-    "yamljs": "^0.2.1"
-  },
   "devDependencies": {
     "chai": "^1.9.2",
-    "mocha": "^2.0.1"
+    "concat-stream": "^1.4.7",
+    "mocha": "^2.0.1",
+    "through2": "^0.6.3",
+    "vinyl-fs": "^0.3.13",
+    "yamljs": "^0.2.1"
   }
 }
