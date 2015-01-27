@@ -1,5 +1,8 @@
 var expect = require('./test-helpers').expect;
+var YAML = require('yamljs');
 var ConfigLoader = require('../lib/node-config-loader');
+
+ConfigLoader.Loaders.yaml = ConfigLoader.Loaders.yml = YAML.bind(YAML);
 
 describe('node-config-loader', function () {
 	function load(fn) {
