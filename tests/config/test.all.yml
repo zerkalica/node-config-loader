@@ -1,5 +1,0 @@
-# ./config/test.all.yml
-
-console:
-  proc: test
-  name: test

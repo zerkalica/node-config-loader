@@ -1,6 +1,6 @@
 {
   "name": "node-config-loader",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Scan directories and loads json and yaml files",
   "main": "index.js",
   "scripts": {
@@ -23,11 +23,14 @@
   },
   "homepage": "https://github.com/zerkalica/node-config-loader",
   "devDependencies": {
-    "chai": "^1.9.2",
-    "concat-stream": "^1.4.7",
+    "chai": "^1.10.0",
+    "js-yaml": "^3.2.5",
     "mocha": "^2.0.1",
+    "toml": "^2.1.1",
+    "vinyl-fs": "^0.3.13"
+  },
+  "dependencies": {
     "through2": "^0.6.3",
-    "vinyl-fs": "^0.3.13",
-    "yamljs": "^0.2.1"
+    "object-merge": "^2.5.1"
   }
 }

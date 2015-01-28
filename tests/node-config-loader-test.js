@@ -1,23 +1,34 @@
 var expect = require('./test-helpers').expect;
-var YAML = require('yamljs');
-var ConfigLoader = require('../lib/node-config-loader');
+var fs = require('vinyl-fs');
 
-ConfigLoader.Loaders.yaml = ConfigLoader.Loaders.yml = YAML.bind(YAML);
+var Toml = require('toml');
+var JsYaml = require('js-yaml');
+
+var ConfigBuilder = require('../');
+var Adapter = ConfigBuilder.Adapter;
+
+var fakeData = require('./config-all.json');
+
+function load(success) {
+    fs.src([__dirname + '/config/*.{toml,yaml}'])
+      .pipe(ConfigBuilder.mergeStream({
+        env: 'dev',
+        target: 'client',
+        fileName: 'config-all.json',
+        parser: Adapter.strategy({
+            yml: Adapter.yaml(JsYaml),
+            yaml: Adapter.yaml(JsYaml),
+            toml: Adapter.toml(Toml)
+        })
+      }))
+      .on('data', success);
+}
 
 describe('node-config-loader', function () {
-	function load(fn) {
-		ConfigLoader({env: 'dev', project: 'app1'})
-			.addConfigPath(__dirname + '/config')
-			.load(fn);
-	}
-
-	it('should load all and dev environment', function () {
-		var a = [];
-
-		load(function (config) {
-			a.push(config);
-		});
-		expect(a[0].app1.proc).to.be.equal('test-test');
-		expect(a[1].example.proc).to.be.equal('example-dev');
-	});
+    it('should load all and dev environment', function (done) {
+        load(function (file) {
+            expect(file.mergedData).to.be.deep.equal(fakeData);
+            done();
+        });
+    });
 });
