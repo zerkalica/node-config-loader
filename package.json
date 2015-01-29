@@ -1,6 +1,6 @@
 {
   "name": "node-config-loader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Scan directories and loads json and yaml files",
   "main": "index.js",
   "scripts": {
@@ -30,7 +30,6 @@
     "vinyl-fs": "^0.3.13"
   },
   "dependencies": {
-    "through2": "^0.6.3",
-    "object-merge": "^2.5.1"
+    "through2": "^0.6.3"
   }
 }

@@ -7,7 +7,7 @@ var JsYaml = require('js-yaml');
 var ConfigLoader = require('..');
 var Adapter = ConfigLoader.Adapter;
 
-fs.src(['../tests/config/*.{toml,yaml}'])
+fs.src([__dirname + '/../tests/config/*.{toml,yaml}'])
   .pipe(ConfigLoader.mergeStream({
     env: 'dev',
     target: 'client',
