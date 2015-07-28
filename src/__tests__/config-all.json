@@ -1,0 +1,17 @@
+{
+    "example": {
+        "proc": "example-dev-yaml",
+        "name": "test-yaml",
+        "test": {
+            "p2": 444,
+            "p3": 534
+        }
+    },
+    "the": {
+        "test_string": "You'll hate me after this - #"
+    },
+    "console": {
+        "proc": "test-dev",
+        "name": "test"
+    }
+}
