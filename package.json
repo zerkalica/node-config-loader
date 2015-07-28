@@ -4,8 +4,34 @@
   "description": "Scan directories and loads json and yaml files",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests"
+    "postinstall": "cp -f conf/git-hooks/* .git/hooks || exit 0",
+    "prepublish": "npm run lint && npm run test && npm run build",
+    "pre-commit": "npm run lint",
+    "update": "npm-check-updates -u && npm install",
+    "pull": "git checkout master && git pull origin master",
+    "push": "git push origin master --tags && npm publish",
+    "release-patch": "npm run pull && npm version patch && npm run push",
+    "release-minor": "npm run pull && npm version minor && npm run push",
+    "release-major": "npm run pull && npm version major && npm run push",
+    "clean": "rm -rf commonMerger.js filters readers utils __tests__ index.js *.map",
+    "build": "npm run clean && babel src --source-maps --out-dir .",
+    "prod": "npm run build -- --production",
+    "dev": "npm run build -- --watch",
+    "lint": "exit 0 && eslint src",
+    "test": "mocha",
+    "test.dev": "npm run test -- --growl --watch",
+    "test.cov": "babel-istanbul cover --report text --report html node_modules/mocha/bin/_mocha"
   },
+  "files": [
+    "package.json",
+    "README.md",
+    "LICENSE",
+    "filters",
+    "readers",
+    "utils",
+    "commonMerger.js",
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/zerkalica/node-config-loader.git"
@@ -23,13 +49,16 @@
   },
   "homepage": "https://github.com/zerkalica/node-config-loader",
   "devDependencies": {
-    "chai": "^1.10.0",
-    "js-yaml": "^3.2.5",
-    "mocha": "^2.0.1",
-    "toml": "^2.1.1",
-    "vinyl-fs": "^0.3.13"
+    "babel": "^5.8.12",
+    "babel-plugin-espower": "^1.0.0",
+    "mocha": "^2.2.5",
+    "npm-check-updates": "^1.5.1",
+    "power-assert": "^0.11.0",
+    "sinon": "^1.15.4",
+    "source-map-support": "^0.3.2"
   },
   "dependencies": {
-    "through2": "^0.6.3"
+    "glob": "^5.0.14",
+    "js-yaml": "^3.3.1"
   }
 }
