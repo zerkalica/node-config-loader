@@ -1,12 +1,12 @@
 import loaderUtils from 'loader-utils'
 import glob from './utils/glob'
-import yamlScan from './scan/yamlScan'
+import polyScan from './scan/polyScan'
 
 export default function webpackLoader(mask) {
     this.cacheable && this.cacheable()
     const cb = this.async()
     const options = loaderUtils.parseQuery(this.query)
-    const scan = yamlScan(options)
+    const scan = polyScan(options)
     glob(mask, {nodir: true})
         .then(files => {
             files.forEach(file => {

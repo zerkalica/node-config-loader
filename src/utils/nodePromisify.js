@@ -2,7 +2,7 @@ const slice = Array.prototype.slice
 
 export default function nodePromisify(fn, self = null) {
     return function promised() {
-        var args = slice.call(arguments)
+        const args = slice.call(arguments)
         return new Promise((resolve, reject) => {
             function cb(err, data) {
                 if (err) {
