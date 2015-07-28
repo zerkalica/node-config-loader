@@ -1,4 +1,5 @@
 [app1]
 proc = "test-test"
-
-qwe:123
+arr = [
+    'test0'
+]
