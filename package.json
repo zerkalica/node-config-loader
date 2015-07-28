@@ -25,12 +25,13 @@
   "files": [
     "package.json",
     "README.md",
+    "index.js",
+    "*.map",
     "LICENSE",
     "filters",
     "readers",
     "utils",
-    "commonMerger.js",
-    "index.js"
+    "commonMerger.js"
   ],
   "repository": {
     "type": "git",
