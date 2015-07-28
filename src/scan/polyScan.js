@@ -1,4 +1,5 @@
 import jsYaml from 'js-yaml'
+import toml from 'toml-node'
 import os from 'os'
 
 import merge from '../utils/merge'
@@ -6,16 +7,18 @@ import scanner from '../utils/scanner'
 
 import strategyReader from '../readers/strategyReader'
 import yamlReader from '../readers/yamlReader'
-import requireReader from '../readers/requireReader'
+import tomlReader from '../readers/tomlReader'
+import jsonReader from '../readers/jsonReader'
 
 import nodeFilter from '../filters/nodeFilter'
 
-export default function yamlScan({
+export default function polyScan({
     instance = 'server',
     env = process.env.NODE_ENV,
     hostname = os.hostname(),
     tagSeparator = '#'
 }) {
+    const yaml = yamlReader(jsYaml)
     return scanner({
         filter: nodeFilter({
             instance,
@@ -24,8 +27,10 @@ export default function yamlScan({
             tagSeparator
         }),
         readFile: strategyReader({
-            'yml': yamlReader(jsYaml),
-            'json': requireReader()
+            'yml': yaml,
+            'yaml': yaml,
+            'toml': tomlReader(toml),
+            'json': jsonReader()
         }),
         merge
     })
