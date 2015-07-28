@@ -1,5 +1,5 @@
 import glob from 'glob'
-import 'source-map-support/register'
+//import 'source-map-support/register'
 
 const mask = 'src/**/__tests__/*.js'
 const srcMask = __dirname + '/../' + mask

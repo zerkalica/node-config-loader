@@ -1,0 +1,9 @@
+[console]
+proc = 'test-dev'
+name = "test"
+
+[app1]
+arr = [
+    'test1',
+    'test2'
+]
