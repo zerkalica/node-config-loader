@@ -1,1 +1,1 @@
-export * from './commonMerger'
+export * from './common'

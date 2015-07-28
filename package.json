@@ -31,7 +31,8 @@
     "filters",
     "readers",
     "utils",
-    "commonMerger.js"
+    "common.js",
+    "webpack.js"
   ],
   "repository": {
     "type": "git",
@@ -60,6 +61,7 @@
   },
   "dependencies": {
     "glob": "^5.0.14",
-    "js-yaml": "^3.3.1"
+    "js-yaml": "^3.3.1",
+    "loader-utils": "^0.2.11"
   }
 }
