@@ -7,16 +7,14 @@ export default function webpackLoader(mask) {
     const cb = this.async()
     const options = loaderUtils.parseQuery(this.query)
     const scan = polyScan(options)
+
     glob(mask, {nodir: true})
         .then(files => {
-            files.forEach(file => {
-                this.addDependency(file)
-            })
-
+            files.forEach(file => this.addDependency(file))
             return scan(files)
         })
         .then(data => {
             cb(null, data)
         })
-        .catch(cb)
+        .catch(err => cb(err))
 }
