@@ -30,6 +30,7 @@
     "LICENSE",
     "filters",
     "readers",
+    "scan",
     "utils",
     "common.js",
     "webpack.js"
