@@ -1,7 +1,0 @@
-[example]
-proc = "example-dev"
-name = "test"
-
-[example.test]
-p2=123
-p3=534
