@@ -5,7 +5,7 @@ var _interopRequireDefault = require('babel-runtime/helpers/interop-require-defa
 Object.defineProperty(exports, '__esModule', {
     value: true
 });
-exports['default'] = makeCommonMerger;
+exports['default'] = yamlScan;
 
 var _jsYaml = require('js-yaml');
 
@@ -15,35 +15,31 @@ var _os = require('os');
 
 var _os2 = _interopRequireDefault(_os);
 
-var _utilsMerge = require('./utils/merge');
+var _utilsMerge = require('../utils/merge');
 
 var _utilsMerge2 = _interopRequireDefault(_utilsMerge);
 
-var _utilsGlob = require('./utils/glob');
-
-var _utilsGlob2 = _interopRequireDefault(_utilsGlob);
-
-var _utilsScanner = require('./utils/scanner');
+var _utilsScanner = require('../utils/scanner');
 
 var _utilsScanner2 = _interopRequireDefault(_utilsScanner);
 
-var _readersStrategyReader = require('./readers/strategyReader');
+var _readersStrategyReader = require('../readers/strategyReader');
 
 var _readersStrategyReader2 = _interopRequireDefault(_readersStrategyReader);
 
-var _readersYamlReader = require('./readers/yamlReader');
+var _readersYamlReader = require('../readers/yamlReader');
 
 var _readersYamlReader2 = _interopRequireDefault(_readersYamlReader);
 
-var _readersRequireReader = require('./readers/requireReader');
+var _readersRequireReader = require('../readers/requireReader');
 
 var _readersRequireReader2 = _interopRequireDefault(_readersRequireReader);
 
-var _filtersNodeFilter = require('./filters/nodeFilter');
+var _filtersNodeFilter = require('../filters/nodeFilter');
 
 var _filtersNodeFilter2 = _interopRequireDefault(_filtersNodeFilter);
 
-function makeCommonMerger(_ref) {
+function yamlScan(_ref) {
     var _ref$instance = _ref.instance;
     var instance = _ref$instance === undefined ? 'server' : _ref$instance;
     var _ref$env = _ref.env;
@@ -53,7 +49,7 @@ function makeCommonMerger(_ref) {
     var _ref$tagSeparator = _ref.tagSeparator;
     var tagSeparator = _ref$tagSeparator === undefined ? '#' : _ref$tagSeparator;
 
-    var scan = (0, _utilsScanner2['default'])({
+    return (0, _utilsScanner2['default'])({
         filter: (0, _filtersNodeFilter2['default'])({
             instance: instance,
             env: env,
@@ -66,11 +62,7 @@ function makeCommonMerger(_ref) {
         }),
         merge: _utilsMerge2['default']
     });
-
-    return function commonMerger(mask) {
-        return (0, _utilsGlob2['default'])(mask).then(scan);
-    };
 }
 
 module.exports = exports['default'];
-//# sourceMappingURL=commonMerger.js.map
+//# sourceMappingURL=yamlScan.js.map
