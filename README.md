@@ -67,8 +67,8 @@ function MyScan({
     })
 }
 
-glob(mask)
-  .then(scan)
+glob('./config/**/*.json')
+  .then(MyScan())
   .then(config => console.log(config))
 ```
 
