@@ -1,5 +1,5 @@
 import jsYaml from 'js-yaml'
-import toml from 'toml-node'
+import toml from 'toml'
 import os from 'os'
 
 import merge from '../utils/merge'
