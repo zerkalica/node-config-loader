@@ -2,7 +2,6 @@ import jsYaml from 'js-yaml'
 import os from 'os'
 
 import merge from './utils/merge'
-import glob from './utils/glob'
 import scanner from './utils/scanner'
 
 import strategyReader from './readers/strategyReader'
@@ -11,13 +10,13 @@ import requireReader from './readers/requireReader'
 
 import nodeFilter from './filters/nodeFilter'
 
-export default function makeCommonMerger({
+export default function yamlScan({
     instance = 'server',
     env = process.env.NODE_ENV,
     hostname = os.hostname(),
     tagSeparator = '#'
 }) {
-    const scan = scanner({
+    return scanner({
         filter: nodeFilter({
             instance,
             env,
@@ -30,9 +29,4 @@ export default function makeCommonMerger({
         }),
         merge
     })
-
-    return function commonMerger(mask) {
-        return glob(mask)
-            .then(scan)
-    }
 }
