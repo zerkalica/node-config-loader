@@ -7,7 +7,7 @@ export default function webpackLoader(mask) {
     const cb = this.async()
     const options = loaderUtils.parseQuery(this.query)
     const scan = yamlScan(options)
-    glob(mask)
+    glob(mask, {nodir: true})
         .then(files => {
             files.forEach(file => {
                 this.addDependency(file)
