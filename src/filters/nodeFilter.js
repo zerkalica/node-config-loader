@@ -36,6 +36,6 @@ export default function makeNodeFilter({
 
     return function nodeFilter(relFile) {
         const filePart = subStrFrom(path.basename(relFile, path.extname(relFile)), tagSeparator)
-        return filesTemplates.filter(file => filePart === file)
+        return filesTemplates.filter(file => filePart === file).length > 0
     }
 }
