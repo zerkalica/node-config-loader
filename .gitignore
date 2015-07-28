@@ -26,3 +26,15 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+
+flow
+build
+dist
+
+*.map
+/index.js
+/commonMerger.js
+/filters
+/readers
+/utils
+/__tests__
