@@ -1,0 +1,6 @@
+example:
+  proc: example-dev-yaml
+  name: test-yaml
+
+  test:
+    p2: 444

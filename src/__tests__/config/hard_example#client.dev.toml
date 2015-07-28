@@ -1,0 +1,6 @@
+# Test file for TOML
+# Only this one tries to emulate a TOML file written by a user of the kind of parser writers probably hate
+# This part you'll really hate
+
+[the]
+test_string = "You'll hate me after this - #"          # " Annoying, isn't it?
