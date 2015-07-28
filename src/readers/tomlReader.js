@@ -5,7 +5,7 @@
  * @param  {Toml} Toml toml parser
  */
 export default function makeTomlReader(Toml) {
-    return function tomlReader(file, cb) {
+    return function tomlReader(file) {
         return new Promise((resolve, reject) => {
             resolve(Toml.parse(file.contents.toString()))
         })
