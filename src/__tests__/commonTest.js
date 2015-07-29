@@ -10,6 +10,9 @@ describe('commonMerger', () => {
                 "test": {
                     "p2": 444,
                     "p3": 534
+                },
+                "test2": {
+                    "p2": 123
                 }
             },
             "app1": {
@@ -30,7 +33,7 @@ describe('commonMerger', () => {
             env: 'dev',
             hostname: 'testhost',
             tagSeparator: '#'
-        })(__dirname + '/config/**/*.*')
+        })(__dirname + '/{config,cfg/a}/**/*.{toml,tml,yaml,yml,json}')
         .then(loadedConfig => {
             assert.deepEqual(loadedConfig, testConfig)
         })
@@ -56,7 +59,7 @@ describe('commonMerger', () => {
             env: 'dev',
             hostname: 'testhost',
             tagSeparator: '#'
-        })(__dirname + '/config/**/*.*')
+        })(__dirname + '/config/**/*.{toml,tml,yaml,yml,json}')
         .then(loadedConfig => {
             assert.deepEqual(loadedConfig, testConfig)
         })
