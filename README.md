@@ -18,7 +18,7 @@ Scan directories, load, parse to js object and merge many configs into single fi
 import loader from 'node-config-loader'
 import os from 'os'
 
-loader('./config/**/*.json', {
+loader(__dirname + '/config/**/*.{json,yml,tml}', {
     instance = 'server',
     env = process.env.NODE_ENV,
     hostname = os.hostname(),
@@ -67,7 +67,7 @@ function MyScan({
     })
 }
 
-glob('./config/**/*.json')
+glob(__dirname + '/config/**/*.{json,yml,tml}')
   .then(MyScan())
   .then(config => console.log(config))
 ```
