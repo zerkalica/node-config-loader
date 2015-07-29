@@ -4,7 +4,7 @@ Scan directories, load, parse to js object and merge many configs into single fi
 
 ## Features
 * Highly customizable and composable: each component is a pure function and exposed to public: compose you own loaders
-* Used [isaacs node-glob](https://github.com/isaacs/node-glob) for files matching
+* Used [globby](https://github.com/sindresorhus/globby) for files matching
 * Used promises via [babel-runtime](https://babeljs.io/docs/usage/runtime/)
 * Compatible with [lorenwest node-config](https://github.com/lorenwest/node-config/wiki/Configuration-Files) file loading scheme, but each file name can be prefixed by '#' separator
 * Default loader supports json and yml files via [nodeca js-yaml](https://github.com/nodeca/js-yaml) (can be overrided)
@@ -35,7 +35,7 @@ loader(__dirname + '/config/**/*.{json,yml,tml}', {
 import jsYaml from 'js-yaml'
 import os from 'os'
 
-import glob from 'node-config-loader/utils/glob'
+import globby from 'node-config-loader/utils/globby'
 
 import merge from 'node-config-loader/utils/merge'
 import scanner from 'node-config-loader/utils/scanner'
@@ -67,7 +67,7 @@ function MyScan({
     })
 }
 
-glob(__dirname + '/config/**/*.{json,yml,tml}')
+globby([__dirname + '/config/**/*.{json,yml,tml}'])
   .then(MyScan())
   .then(config => console.log(config))
 ```
