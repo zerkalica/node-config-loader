@@ -6,7 +6,7 @@ export default function webpackLoader(mask) {
     this.cacheable && this.cacheable()
     const cb = this.async()
     const options = loaderUtils.parseQuery(this.query)
-    const scan = polyScan(options)
+    const scan = polyScan(options || {})
     const opts = {
         ...options,
         nodir: true
