@@ -39,8 +39,10 @@ export default function makeNodeFilter({
     }
 
     return function nodeFilter(relFiles) {
-        return filesTemplates.reduce((acc, template) => {
-            return acc.concat(relFiles.filter(relFile => normalize(relFile) === template))
-        }, [])
+        return filesTemplates.reduce((acc, template) =>
+            acc.concat(relFiles.filter(relFile =>
+                normalize(relFile) === template)
+            )
+        , [])
     }
 }
