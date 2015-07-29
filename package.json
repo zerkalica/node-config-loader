@@ -1,6 +1,6 @@
 {
   "name": "node-config-loader",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Scan directories and loads json and yaml files",
   "main": "index.js",
   "scripts": {
