@@ -34,8 +34,13 @@ export default function makeNodeFilter({
         instance
     }))
 
-    return function nodeFilter(relFile) {
-        const filePart = subStrFrom(path.basename(relFile, path.extname(relFile)), tagSeparator)
-        return filesTemplates.filter(file => filePart === file).length > 0
+    function normalize(relFile) {
+        return subStrFrom(path.basename(relFile, path.extname(relFile)), tagSeparator)
+    }
+
+    return function nodeFilter(relFiles) {
+        return filesTemplates.reduce((acc, template) => {
+            return acc.concat(relFiles.filter(relFile => normalize(relFile) === template))
+        }, [])
     }
 }
