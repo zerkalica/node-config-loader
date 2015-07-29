@@ -1,5 +1,5 @@
 import loaderUtils from 'loader-utils'
-import glob from './utils/glob'
+import globby from './utils/globby'
 import polyScan from './scan/polyScan'
 
 export default function webpackLoader(mask) {
@@ -16,7 +16,7 @@ export default function webpackLoader(mask) {
     delete opts.hostname
     delete opts.tagSeparator
 
-    glob(mask, opts)
+    globby(mask, opts)
         .then(files => {
             files.forEach(file => this.addDependency(file))
             return scan(files)

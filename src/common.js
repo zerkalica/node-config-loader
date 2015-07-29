@@ -1,16 +1,16 @@
 import polyScan from './scan/polyScan'
-import glob from './utils/glob'
+import globby from './utils/globby'
 
 export default function makeCommonMerger(options) {
     const scan = polyScan(options)
 
-    return function commonMerger(mask, globOptions = {}) {
+    return function commonMerger(mask, globbyOptions = {}) {
         const opts = {
-            ...globOptions,
+            ...globbyOptions,
             nodir: true
         }
 
-        return glob(mask, opts)
+        return globby(mask, opts)
             .then(scan)
     }
 }
