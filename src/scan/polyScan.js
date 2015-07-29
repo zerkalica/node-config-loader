@@ -19,6 +19,7 @@ export default function polyScan({
     hostname = os.hostname(),
     tagSeparator = '#'
 }) {
+    
     const yaml = yamlReader(jsYaml)
     const tr =tomlReader(toml)
 
