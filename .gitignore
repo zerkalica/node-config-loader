@@ -40,3 +40,4 @@ dist
 /utils
 /__tests__
 /scan
+.tags*
