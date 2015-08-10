@@ -74,6 +74,23 @@ globby([__dirname + '/config/**/*.{json,yml,tml}'])
 
 ### As webpack loader
 ```js
-import config from 'node-config-loader/webpack!./config/**/*.yml'
+import config from 'node-config-loader/webpack!./configs.json'
 console.log(config)
 ```
+
+Where ./config.json is
+```json
+{
+    "mask": [
+        "{ROOT}/src/config/**/*.json"
+    ],
+    "instance": "client|server",
+    "env": "prod|dev",
+    "hostname" : "host",
+    "tagSeparator": "#"
+}
+```
+
+*mask* is required, all other params are optional.
+
+Available env vars: {ROOT} - project root, {PWD} - process.cwd(), any process.env variable

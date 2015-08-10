@@ -1,6 +1,6 @@
 import fsReadFile from './readFile'
 import __debug from 'debug'
-import path from 'path' 
+import path from 'path'
 const debug = __debug('node-config-loader:scanner:debug')
 
 function basename(p) {
@@ -17,8 +17,8 @@ export default function makeScanner({filter, merge, readFile}) {
             .then(filteredFiles => {
                 debug('filtered: %o', filteredFiles.map(basename))
                 return Promise.all(filteredFiles.map(file => fsReadFile(file)))
-                    .then(datas => 
-                        Promise.all(datas.map((contents, i) => 
+                    .then(datas =>
+                        Promise.all(datas.map((contents, i) =>
                             readFile({
                                 contents,
                                 path: filteredFiles[i]
@@ -26,7 +26,7 @@ export default function makeScanner({filter, merge, readFile}) {
                         ))
                     )
             })
-            .then(objects => 
+            .then(objects =>
                 objects.reduce((acc, object) => merge(acc, object), {})
             )
     }

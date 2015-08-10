@@ -53,7 +53,13 @@
   "homepage": "https://github.com/zerkalica/node-config-loader",
   "devDependencies": {
     "babel": "^5.8.12",
+    "babel-eslint": "^4.0.5",
     "babel-plugin-espower": "^1.0.0",
+    "debug": "^2.2.0",
+    "eslint": "^1.1.0",
+    "eslint-config-airbnb": "0.0.7",
+    "eslint-config-airplus": "^1.0.2",
+    "eslint-plugin-react": "^3.2.1",
     "mocha": "^2.2.5",
     "npm-check-updates": "^2.0.1",
     "power-assert": "^0.11.0",
@@ -62,6 +68,7 @@
   "dependencies": {
     "babel-runtime": "^5.8.12",
     "debug": "^2.2.0",
+    "find-root": "^0.1.1",
     "globby": "^2.1.0",
     "js-yaml": "^3.3.1",
     "loader-utils": "^0.2.11",
