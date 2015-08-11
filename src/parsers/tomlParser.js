@@ -4,8 +4,8 @@
  * @see  https://github.com/BinaryMuse/toml-node
  * @param  {Toml} Toml toml parser
  */
-export default function makeTomlReader(Toml) {
-    return function tomlReader(file) {
+export default function makeTomlParser(Toml) {
+    return function tomlParser(file) {
         return new Promise((resolve, reject) => {
             resolve(Toml.parse(file.contents.toString()))
         })

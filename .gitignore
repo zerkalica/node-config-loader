@@ -31,13 +31,13 @@ flow
 build
 dist
 
+.tags*
 *.map
 /index.js
-/common.js
+/loadConfig.js
 /webpack.js
+/common
 /filters
-/readers
+/parsers
 /utils
 /__tests__
-/scan
-.tags*

@@ -4,8 +4,8 @@ import path from 'path'
  * StrategyAdapter
  * @param {Adapter[file_extension]} adapters
  */
-export default function makeStrategyReader(adapters = {}) {
-    return function strategyReader(file) {
+export default function makeStrategyParser(adapters = {}) {
+    return function strategyParser(file) {
         const ext = path.extname(file.path).substring(1)
 
         return new Promise((resolve, reject) => {
