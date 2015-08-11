@@ -8,6 +8,7 @@ Scan directories, load, parse to js object and merge many configs into single fi
 -	Used promises via [babel-runtime](https://babeljs.io/docs/usage/runtime/)
 -	Compatible with [lorenwest node-config](https://github.com/lorenwest/node-config/wiki/Configuration-Files) file loading scheme, but each file name can be prefixed by '#' separator
 -	Default loader supports json and yml files via [nodeca js-yaml](https://github.com/nodeca/js-yaml) (can be overrided)
+-	Live reload support via webpack loader
 
 Usage
 =====
