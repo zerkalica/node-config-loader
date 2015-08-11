@@ -13,7 +13,7 @@
     "release-patch": "npm run pull && npm version patch && npm run push",
     "release-minor": "npm run pull && npm version minor && npm run push",
     "release-major": "npm run pull && npm version major && npm run push",
-    "clean": "rm -rf common.js webpack.js index.js scan filters readers utils __tests__ *.map",
+    "clean": "rm -rf *.map loadConfig.js webpack.js index.js common filters parsers utils __tests__",
     "build": "npm run clean && babel src --source-maps --out-dir . --source-root node-config-loader",
     "prod": "npm run build -- --production",
     "dev": "npm run build -- --watch",
