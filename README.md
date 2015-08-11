@@ -87,3 +87,49 @@ module.exports = {
     }
 }
 ```
+
+Isomorphic friendly сlient with run-time config
+-----------------------------------------------
+
+```js
+// getConfig.js
+import config from 'node-config-loader/webpack!../conf/.configloaderrc'
+import merge from 'node-config-loader/utils/merge'
+
+function getRuntimeConfig({settings, location, referrer}) {
+    return {
+        env: {
+            origin: location.origin,
+            hash: location.hash,
+            pathname: location.pathname,
+            search: location.search,
+            referrer: referrer
+        },
+        config: {
+            debug: settings.debug,
+            sitePrefix: settings.sitePrefix,
+            locale: {
+                lang: settings.locale
+            }
+        }
+    }
+}
+
+export default function getConfig(opts) {
+    return merge(config, getRuntimeConfig(opts))
+}
+```
+
+```js
+// index.js
+import getConfig from './getConfig'
+
+const config = getConfig({
+    settings: window.settings || {},
+    location: window.location,
+    referrer: document.referrer
+})
+
+// config
+init(config)
+```
