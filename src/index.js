@@ -1,2 +1,2 @@
-import common from './common'
-export default common
+import loadConfig from './loadConfig'
+export default loadConfig

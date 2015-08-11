@@ -14,7 +14,7 @@
     "release-minor": "npm run pull && npm version minor && npm run push",
     "release-major": "npm run pull && npm version major && npm run push",
     "clean": "rm -rf common.js webpack.js index.js scan filters readers utils __tests__ *.map",
-    "build": "npm run clean && babel src --source-maps --out-dir .",
+    "build": "npm run clean && babel src --source-maps --out-dir . --source-root node-config-loader",
     "prod": "npm run build -- --production",
     "dev": "npm run build -- --watch",
     "lint": "exit 0 && eslint src",
@@ -23,17 +23,14 @@
     "test.cov": "babel-istanbul cover --report text --report html node_modules/mocha/bin/_mocha"
   },
   "files": [
-    "package.json",
-    "README.md",
-    "index.js",
+    "*.md",
+    "*.js",
     "*.map",
     "LICENSE",
+    "common",
     "filters",
-    "readers",
-    "scan",
-    "utils",
-    "common.js",
-    "webpack.js"
+    "parsers",
+    "utils"
   ],
   "repository": {
     "type": "git",
