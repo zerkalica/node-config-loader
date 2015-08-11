@@ -14,7 +14,7 @@
     "release-minor": "npm run pull && npm version minor && npm run push",
     "release-major": "npm run pull && npm version major && npm run push",
     "clean": "rm -rf *.map loadConfig.js webpack.js index.js common filters parsers utils __tests__",
-    "build": "npm run clean && babel src --source-maps --out-dir . --source-root node-config-loader",
+    "build": "npm run clean && babel src --source-maps --out-dir .",
     "prod": "npm run build -- --production",
     "dev": "npm run build -- --watch",
     "lint": "exit 0 && eslint src",
