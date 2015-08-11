@@ -73,12 +73,19 @@ globby([__dirname + '/config/**/*.{json,yml,tml}'])
 ```
 
 ### As webpack loader
+
+Config load order:
+
+1. .configloaderrc
+2. webpack.config.js configLoader section
+3. webpack loader query params
+
 ```js
-import config from 'node-config-loader/webpack!./configs.json'
+import config from 'node-config-loader/webpack?env=prod&instance=client!./.configloaderrc'
 console.log(config)
 ```
 
-Where ./config.json is
+Where .configloaderrc is
 ```json
 {
     "mask": [
@@ -93,4 +100,28 @@ Where ./config.json is
 
 *mask* is required, all other params are optional.
 
-Available env vars: {ROOT} - project root, {PWD} - process.cwd(), any process.env variable
+Available env vars in mask:
+
+* {ROOT} - project root
+* {DIRNAME} - .configloaderrc directory
+* {PWD} - process.cwd()
+* any process.env variable
+
+### Settings in Webpack config
+
+```js
+// webpack.config.js
+module.exports = {
+    configLoader: {
+        env: args.env || 'dev',
+        instance: args.instance || 'client'
+    },
+    module: {
+        loaders: [
+            {
+                test: /.*\.configloaderrc$/,
+                loader: 'node-config-loader/webpack'
+            }
+    }
+}
+```
