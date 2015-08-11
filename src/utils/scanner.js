@@ -11,7 +11,6 @@ export default function makeScanner({filter, merge, readFile}) {
     return function scanner(files) {
         return Promise.resolve(files)
             .then(realFiles => {
-                debug('all: %o', realFiles.map(basename))
                 return filter(realFiles)
             })
             .then(filteredFiles => {
