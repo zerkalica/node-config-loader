@@ -12,18 +12,19 @@ export default function webpackLoader(source) {
     const cb = this.async()
     const params = JSON.parse(source)
     const query = loaderUtils.parseQuery(this.query) || {}
-    console.log(111, this.query)
     const opts = {
         nodir: true,
         ...params,
         ...query,
         ...this.options.configLoader || {}
     }
+    const rp = path.dirname(this.resourcePath)
 
     const scan = polyScan(opts)
     const templateArgs = {
         ...process.env,
-        'ROOT': fr(path.dirname(this.resourcePath)),
+        'ROOT': fr(rp),
+        'DIRNAME': rp,
         'PWD': process.cwd()
     }
 
@@ -46,7 +47,8 @@ export default function webpackLoader(source) {
             return scan(files)
         })
         .then(value => {
-            cb(null, JSON.stringify(value, undefined, '\t'))
+            this.value = [value]
+            cb(null, 'module.exports = ' + JSON.stringify(value, undefined, '\t') + ';')
         })
         .catch(err => cb(err))
 }
