@@ -3,39 +3,38 @@ import globby from './utils/globby'
 import polyScan from './scan/polyScan'
 import strMap from './utils/strMap'
 import path from 'path'
-import fs from 'fs'
 import __debug from 'debug'
 import fr from 'find-root'
 const debug = __debug('node-config-loader:webpackLoader:debug')
 
-export default function webpackLoader() {
+export default function webpackLoader(source) {
     this.cacheable && this.cacheable()
     const cb = this.async()
-    const rp = this.resourcePath
-    const params = JSON.parse(fs.readFileSync(rp))
-    const query = loaderUtils.parseQuery(this.query)
+    const params = JSON.parse(source)
+    const query = loaderUtils.parseQuery(this.query) || {}
+    console.log(111, this.query)
     const opts = {
+        nodir: true,
         ...params,
         ...query,
-        nodir: true
+        ...this.options.configLoader || {}
     }
 
     const scan = polyScan(opts)
     const templateArgs = {
         ...process.env,
-        'ROOT': fr(path.dirname(rp)),
+        'ROOT': fr(path.dirname(this.resourcePath)),
         'PWD': process.cwd()
     }
 
     const masks = opts.mask.map(mask => strMap(mask, templateArgs))
+    debug('globby(%o, %o)', masks, opts)
 
-    delete opts.masks
+    delete opts.mask
     delete opts.instance
     delete opts.env
     delete opts.hostname
     delete opts.tagSeparator
-
-    debug('globby(%o, %o)', masks, opts)
 
     if (!cb) {
         throw new Error('node-config-loader can\'t support sync mode')
@@ -47,8 +46,7 @@ export default function webpackLoader() {
             return scan(files)
         })
         .then(value => {
-            this.value = [value]
-            cb(null, 'module.exports = ' + JSON.stringify(value, undefined, '\t') + ';')
+            cb(null, JSON.stringify(value, undefined, '\t'))
         })
         .catch(err => cb(err))
 }
