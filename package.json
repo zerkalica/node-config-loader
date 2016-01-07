@@ -51,6 +51,7 @@
   "devDependencies": {
     "babel": "^5.8.12",
     "babel-eslint": "^4.0.5",
+    "babel-istanbul": "^0.5.9",
     "babel-plugin-espower": "^1.0.0",
     "debug": "^2.2.0",
     "eslint": "^1.1.0",
