@@ -2,29 +2,29 @@ import loadConfig from '../'
 import assert from 'power-assert'
 
 describe('commonMerger', () => {
-    it('should merge server dev environments', () => {
+    it('should merge server dev environments', done => {
         const testConfig = {
-            'example': {
-                'proc': 'example-dev-yaml',
-                'name': 'test-yaml',
-                'test': {
-                    'p2': 444,
-                    'p3': 534
+            example: {
+                proc: 'example-dev-yaml',
+                name: 'test-yaml',
+                test: {
+                    p2: 444,
+                    p3: 534
                 },
-                'test2': {
-                    'p2': 123
+                test2: {
+                    p2: 123
                 }
             },
-            'app1': {
-                'arr': [
+            app1: {
+                arr: [
                     'test1',
                     'test2'
                 ],
-                'proc': 'test-test'
+                proc: 'test-test'
             },
-            'console': {
-                'proc': 'test-dev',
-                'name': 'test'
+            console: {
+                proc: 'test-dev',
+                name: 'test'
             }
         }
 
@@ -35,23 +35,24 @@ describe('commonMerger', () => {
             hostname: 'testhost',
             tagSeparator: '#'
         })
-        .then(loadedConfig => {
-            assert.deepEqual(loadedConfig, testConfig)
-        })
+            .then(loadedConfig => {
+                assert.deepEqual(loadedConfig, testConfig)
+                done()
+            })
     })
 
-    it('should merge client dev environments', () => {
+    it('should merge client dev environments', done => {
         const testConfig = {
-            'example': {
-                'proc': 'example-dev-yaml',
-                'name': 'test-yaml',
-                'test': {
-                    'p2': 444,
-                    'p3': 534
+            example: {
+                proc: 'example-dev-yaml',
+                name: 'test-yaml',
+                test: {
+                    p2: 444,
+                    p3: 534
                 }
             },
-            'the': {
-                'test_string': 'You\'ll hate me after this - #'
+            the: {
+                test_string: 'You\'ll hate me after this - #'
             }
         }
 
@@ -62,9 +63,9 @@ describe('commonMerger', () => {
             hostname: 'testhost',
             tagSeparator: '#'
         })
-        .then(loadedConfig => {
-            assert.deepEqual(loadedConfig, testConfig)
-        })
+            .then(loadedConfig => {
+                assert.deepEqual(loadedConfig, testConfig)
+                done()
+            })
     })
-
 })

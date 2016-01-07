@@ -10,7 +10,9 @@ import scan from './common/scan'
 const debug = __debug('node-config-loader:webpackLoader:debug')
 
 export default function webpackLoader(source) {
-    this.cacheable && this.cacheable()
+    if (this.cacheable) {
+        this.cacheable()
+    }
     const rp = path.dirname(this.resourcePath)
     const cb = this.async()
     const params = JSON.parse(source)
@@ -24,9 +26,9 @@ export default function webpackLoader(source) {
 
     const templateArgs = {
         ...process.env,
-        'ROOT': fr(rp),
-        'DIRNAME': rp,
-        'PWD': process.cwd()
+        ROOT: fr(rp),
+        DIRNAME: rp,
+        PWD: process.cwd()
     }
 
     opts.mask = opts.mask.map(mask => strMap(mask, templateArgs))
