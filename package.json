@@ -2,7 +2,7 @@
   "name": "node-config-loader",
   "version": "1.1.1",
   "description": "Scan directories and loads json and yaml files",
-  "main": "build/index.js",
+  "main": "index.js",
   "scripts": {
     "postinstall": "cp -f conf/git-hooks/* .git/hooks || exit 0",
     "prepublish": "npm run lint && npm run test && npm run build",
@@ -13,8 +13,8 @@
     "release-patch": "npm run pull && npm version patch && npm run push",
     "release-minor": "npm run pull && npm version minor && npm run push",
     "release-major": "npm run pull && npm version major && npm run push",
-    "clean": "rm -rf ./build",
-    "build": "npm run clean && babel -d ./build ./src -s",
+    "clean": "rm -rf *.map loadConfig.js webpack.js index.js common filters parsers utils __tests__",
+    "build": "npm run clean && babel -d . ./src -s",
     "prod": "npm run build -- --production",
     "dev": "npm run build -- --watch",
     "lint": "eslint ./src",
@@ -23,9 +23,12 @@
     "test.cov": "babel-node node_modules/.bin/babel-istanbul cover --report text --report html node_modules/.bin/_mocha"
   },
   "files": [
-    "README.md",
-    "LICENSE",
-    "build"
+    "*.js",
+    "*.map",
+    "common",
+    "filters",
+    "parsers",
+    "utils"
   ],
   "repository": {
     "type": "git",

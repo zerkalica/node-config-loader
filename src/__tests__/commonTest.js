@@ -2,7 +2,7 @@ import loadConfig from '../'
 import assert from 'power-assert'
 
 describe('commonMerger', () => {
-    it('should merge server dev environments', done => {
+    it('should merge server dev environments', () => {
         const testConfig = {
             example: {
                 proc: 'example-dev-yaml',
@@ -37,11 +37,10 @@ describe('commonMerger', () => {
         })
             .then(loadedConfig => {
                 assert.deepEqual(loadedConfig, testConfig)
-                done()
             })
     })
 
-    it('should merge client dev environments', done => {
+    it('should merge client dev environments', () => {
         const testConfig = {
             example: {
                 proc: 'example-dev-yaml',
@@ -65,7 +64,6 @@ describe('commonMerger', () => {
         })
             .then(loadedConfig => {
                 assert.deepEqual(loadedConfig, testConfig)
-                done()
             })
     })
 })
