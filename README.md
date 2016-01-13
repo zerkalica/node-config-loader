@@ -1,5 +1,8 @@
-Node config loader
-==================
+Node config loader [![Build Status](https://secure.travis-ci.org/zerkalica/node-config-loader.png)](http://travis-ci.org/zerkalica/node-config-loader)
+======================================================================================================================================================
+
+[![NPM](https://nodei.co/npm/node-config-loader.png?downloads=true&stars=true)](https://nodei.co/npm/node-config-loader/)
+
 
 Scan directories, load, parse to js object and merge many configs into single file/object.
 
