@@ -6,7 +6,7 @@
  */
 export default function makeTomlParser(Toml) {
     return function tomlParser(file) {
-        return new Promise((resolve, reject) => {
+        return new Promise(resolve => {
             resolve(Toml.parse(file.contents.toString()))
         })
         .catch(e => {
