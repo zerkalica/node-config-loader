@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/common/scan.js"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;kBAIe,uBAAQ,EAAC,KAAK,iBAAA,EAAE,MAAM,kBAAA,EAAC,CAAC","file":"scan.js","sourcesContent":["import merge from '../utils/merge'\nimport scanner from '../utils/scanner'\nimport parser from './parser'\n\nexport default scanner({merge, parser})\n"]}

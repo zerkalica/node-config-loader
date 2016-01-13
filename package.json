@@ -12,7 +12,7 @@
     "precommit": "exit 0",
     "update": "ncu -ua && npm install",
     "clean": "rm -rf coverage common filters parsers utils __tests__ *.map *.js",
-    "build": "npm run clean && babel src --source-maps --out-dir $npm_package_options_builddir",
+    "build": "npm run clean && babel src --source-maps --out-dir .",
     "build.dev": "npm run build -- --watch",
     "lint": "eslint ./src",
     "check": "exit 0 && flow check",
