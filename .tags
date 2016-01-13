@@ -1,0 +1,214 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+name	/home/yuferev/projects/node-config-loader/package.json	/^  "name": "node-config-loader",$/;"	function	line:2
+version	/home/yuferev/projects/node-config-loader/package.json	/^  "version": "1.0.12",$/;"	function	line:3
+description	/home/yuferev/projects/node-config-loader/package.json	/^  "description": "Scan directories and loads json and yaml files",$/;"	function	line:4
+main	/home/yuferev/projects/node-config-loader/package.json	/^  "main": "index.js",$/;"	function	line:5
+scripts	/home/yuferev/projects/node-config-loader/package.json	/^  "scripts": {$/;"	function	line:6
+postinstall	/home/yuferev/projects/node-config-loader/package.json	/^    "postinstall": "cp -f conf\/git-hooks\/* .git\/hooks || exit 0",$/;"	function	line:7
+prepublish	/home/yuferev/projects/node-config-loader/package.json	/^    "prepublish": "npm run lint && npm run test && npm run build",$/;"	function	line:8
+pre-commit	/home/yuferev/projects/node-config-loader/package.json	/^    "pre-commit": "npm run lint",$/;"	function	line:9
+update	/home/yuferev/projects/node-config-loader/package.json	/^    "update": "npm-check-updates -u && npm install",$/;"	function	line:10
+pull	/home/yuferev/projects/node-config-loader/package.json	/^    "pull": "git checkout master && git pull origin master",$/;"	function	line:11
+push	/home/yuferev/projects/node-config-loader/package.json	/^    "push": "git push origin master --tags && npm publish",$/;"	function	line:12
+release-patch	/home/yuferev/projects/node-config-loader/package.json	/^    "release-patch": "npm run pull && npm version patch && npm run push",$/;"	function	line:13
+release-minor	/home/yuferev/projects/node-config-loader/package.json	/^    "release-minor": "npm run pull && npm version minor && npm run push",$/;"	function	line:14
+release-major	/home/yuferev/projects/node-config-loader/package.json	/^    "release-major": "npm run pull && npm version major && npm run push",$/;"	function	line:15
+clean	/home/yuferev/projects/node-config-loader/package.json	/^    "clean": "rm -rf common.js webpack.js index.js scan filters readers utils __tests__ *.map",$/;"	function	line:16
+build	/home/yuferev/projects/node-config-loader/package.json	/^    "build": "npm run clean && babel src --source-maps --out-dir .",$/;"	function	line:17
+prod	/home/yuferev/projects/node-config-loader/package.json	/^    "prod": "npm run build -- --production",$/;"	function	line:18
+dev	/home/yuferev/projects/node-config-loader/package.json	/^    "dev": "npm run build -- --watch",$/;"	function	line:19
+lint	/home/yuferev/projects/node-config-loader/package.json	/^    "lint": "exit 0 && eslint src",$/;"	function	line:20
+test	/home/yuferev/projects/node-config-loader/package.json	/^    "test": "mocha",$/;"	function	line:21
+test.dev	/home/yuferev/projects/node-config-loader/package.json	/^    "test.dev": "npm run test -- --growl --watch",$/;"	function	line:22
+test.cov	/home/yuferev/projects/node-config-loader/package.json	/^    "test.cov": "babel-istanbul cover --report text --report html node_modules\/mocha\/bin\/_mocha"$/;"	function	line:23
+files	/home/yuferev/projects/node-config-loader/package.json	/^  "files": [$/;"	function	line:25
+repository	/home/yuferev/projects/node-config-loader/package.json	/^  "repository": {$/;"	function	line:38
+type	/home/yuferev/projects/node-config-loader/package.json	/^    "type": "git",$/;"	function	line:39
+url	/home/yuferev/projects/node-config-loader/package.json	/^    "url": "https:\/\/github.com\/zerkalica\/node-config-loader.git"$/;"	function	line:40
+keywords	/home/yuferev/projects/node-config-loader/package.json	/^  "keywords": [$/;"	function	line:42
+author	/home/yuferev/projects/node-config-loader/package.json	/^  "author": "Stefan Zerkalica <zerkalica@gmail.com>",$/;"	function	line:48
+license	/home/yuferev/projects/node-config-loader/package.json	/^  "license": "MIT",$/;"	function	line:49
+bugs	/home/yuferev/projects/node-config-loader/package.json	/^  "bugs": {$/;"	function	line:50
+url	/home/yuferev/projects/node-config-loader/package.json	/^    "url": "https:\/\/github.com\/zerkalica\/node-config-loader\/issues"$/;"	function	line:51
+homepage	/home/yuferev/projects/node-config-loader/package.json	/^  "homepage": "https:\/\/github.com\/zerkalica\/node-config-loader",$/;"	function	line:53
+devDependencies	/home/yuferev/projects/node-config-loader/package.json	/^  "devDependencies": {$/;"	function	line:54
+babel	/home/yuferev/projects/node-config-loader/package.json	/^    "babel": "^5.8.12",$/;"	function	line:55
+babel-plugin-espower	/home/yuferev/projects/node-config-loader/package.json	/^    "babel-plugin-espower": "^1.0.0",$/;"	function	line:56
+mocha	/home/yuferev/projects/node-config-loader/package.json	/^    "mocha": "^2.2.5",$/;"	function	line:57
+npm-check-updates	/home/yuferev/projects/node-config-loader/package.json	/^    "npm-check-updates": "^2.0.1",$/;"	function	line:58
+power-assert	/home/yuferev/projects/node-config-loader/package.json	/^    "power-assert": "^0.11.0",$/;"	function	line:59
+sinon	/home/yuferev/projects/node-config-loader/package.json	/^    "sinon": "^1.15.4"$/;"	function	line:60
+dependencies	/home/yuferev/projects/node-config-loader/package.json	/^  "dependencies": {$/;"	function	line:62
+babel-runtime	/home/yuferev/projects/node-config-loader/package.json	/^    "babel-runtime": "^5.8.12",$/;"	function	line:63
+debug	/home/yuferev/projects/node-config-loader/package.json	/^    "debug": "^2.2.0",$/;"	function	line:64
+globby	/home/yuferev/projects/node-config-loader/package.json	/^    "globby": "^2.1.0",$/;"	function	line:65
+js-yaml	/home/yuferev/projects/node-config-loader/package.json	/^    "js-yaml": "^3.3.1",$/;"	function	line:66
+loader-utils	/home/yuferev/projects/node-config-loader/package.json	/^    "loader-utils": "^0.2.11",$/;"	function	line:67
+toml	/home/yuferev/projects/node-config-loader/package.json	/^    "toml": "^2.3.0"$/;"	function	line:68
+_interopRequireDefault	/home/yuferev/projects/node-config-loader/filters/nodeFilter.js	/^var _interopRequireDefault = require('babel-runtime\/helpers\/interop-require-default')['default'];$/;"	variable	line:3
+_path	/home/yuferev/projects/node-config-loader/filters/nodeFilter.js	/^var _path = require('path');$/;"	variable	line:10
+_path2	/home/yuferev/projects/node-config-loader/filters/nodeFilter.js	/^var _path2 = _interopRequireDefault(_path);$/;"	variable	line:12
+_os	/home/yuferev/projects/node-config-loader/filters/nodeFilter.js	/^var _os = require('os');$/;"	variable	line:14
+_os2	/home/yuferev/projects/node-config-loader/filters/nodeFilter.js	/^var _os2 = _interopRequireDefault(_os);$/;"	variable	line:16
+_utilsStrMap	/home/yuferev/projects/node-config-loader/filters/nodeFilter.js	/^var _utilsStrMap = require('..\/utils\/strMap');$/;"	variable	line:18
+_utilsStrMap2	/home/yuferev/projects/node-config-loader/filters/nodeFilter.js	/^var _utilsStrMap2 = _interopRequireDefault(_utilsStrMap);$/;"	variable	line:20
+defaultTemplates	/home/yuferev/projects/node-config-loader/filters/nodeFilter.js	/^var defaultTemplates = ['default', 'default-{instance}', '{deployment}', '{deployment}-{instance}', '{hostname}', '{hostname}-{instance}', '{hostname}-{deployment}', '{hostname}-{deployment}-{instance}', 'local', 'local-{instance}', 'local-{deployment}', 'local-{deployment}-{instance}'];$/;"	variable	line:22
+subStrFrom	/home/yuferev/projects/node-config-loader/filters/nodeFilter.js	/^function subStrFrom(str, fromStr) {$/;"	function	line:25
+subStrFrom	/home/yuferev/projects/node-config-loader/filters/nodeFilter.js	/^function subStrFrom(str, fromStr) {$/;"	function	line:25
+makeNodeFilter	/home/yuferev/projects/node-config-loader/filters/nodeFilter.js	/^function makeNodeFilter(_ref) {$/;"	function	line:29
+normalize	/home/yuferev/projects/node-config-loader/filters/nodeFilter.js	/^    function normalize(relFile) {$/;"	function	line:49
+makeNodeFilter.normalize	/home/yuferev/projects/node-config-loader/filters/nodeFilter.js	/^    function normalize(relFile) {$/;"	function	line:49
+nodeFilter	/home/yuferev/projects/node-config-loader/filters/nodeFilter.js	/^    return function nodeFilter(relFiles) {$/;"	function	line:53
+makeNodeFilter	/home/yuferev/projects/node-config-loader/filters/nodeFilter.js	/^function makeNodeFilter(_ref) {$/;"	function	line:29
+_extends	/home/yuferev/projects/node-config-loader/webpack.js	/^var _extends = require('babel-runtime\/helpers\/extends')['default'];$/;"	variable	line:3
+_interopRequireDefault	/home/yuferev/projects/node-config-loader/webpack.js	/^var _interopRequireDefault = require('babel-runtime\/helpers\/interop-require-default')['default'];$/;"	variable	line:5
+_loaderUtils	/home/yuferev/projects/node-config-loader/webpack.js	/^var _loaderUtils = require('loader-utils');$/;"	variable	line:12
+_loaderUtils2	/home/yuferev/projects/node-config-loader/webpack.js	/^var _loaderUtils2 = _interopRequireDefault(_loaderUtils);$/;"	variable	line:14
+_utilsGlobby	/home/yuferev/projects/node-config-loader/webpack.js	/^var _utilsGlobby = require('.\/utils\/globby');$/;"	variable	line:16
+_utilsGlobby2	/home/yuferev/projects/node-config-loader/webpack.js	/^var _utilsGlobby2 = _interopRequireDefault(_utilsGlobby);$/;"	variable	line:18
+_scanPolyScan	/home/yuferev/projects/node-config-loader/webpack.js	/^var _scanPolyScan = require('.\/scan\/polyScan');$/;"	variable	line:20
+_scanPolyScan2	/home/yuferev/projects/node-config-loader/webpack.js	/^var _scanPolyScan2 = _interopRequireDefault(_scanPolyScan);$/;"	variable	line:22
+webpackLoader	/home/yuferev/projects/node-config-loader/webpack.js	/^function webpackLoader(mask) {$/;"	function	line:24
+webpackLoader	/home/yuferev/projects/node-config-loader/webpack.js	/^function webpackLoader(mask) {$/;"	class	line:24
+_extends	/home/yuferev/projects/node-config-loader/common.js	/^var _extends = require('babel-runtime\/helpers\/extends')['default'];$/;"	variable	line:3
+_interopRequireDefault	/home/yuferev/projects/node-config-loader/common.js	/^var _interopRequireDefault = require('babel-runtime\/helpers\/interop-require-default')['default'];$/;"	variable	line:5
+_scanPolyScan	/home/yuferev/projects/node-config-loader/common.js	/^var _scanPolyScan = require('.\/scan\/polyScan');$/;"	variable	line:12
+_scanPolyScan2	/home/yuferev/projects/node-config-loader/common.js	/^var _scanPolyScan2 = _interopRequireDefault(_scanPolyScan);$/;"	variable	line:14
+_utilsGlobby	/home/yuferev/projects/node-config-loader/common.js	/^var _utilsGlobby = require('.\/utils\/globby');$/;"	variable	line:16
+_utilsGlobby2	/home/yuferev/projects/node-config-loader/common.js	/^var _utilsGlobby2 = _interopRequireDefault(_utilsGlobby);$/;"	variable	line:18
+makeCommonMerger	/home/yuferev/projects/node-config-loader/common.js	/^function makeCommonMerger(options) {$/;"	function	line:20
+commonMerger	/home/yuferev/projects/node-config-loader/common.js	/^    return function commonMerger(mask, globbyOptions) {$/;"	function	line:23
+makeCommonMerger	/home/yuferev/projects/node-config-loader/common.js	/^function makeCommonMerger(options) {$/;"	function	line:20
+language	/home/yuferev/projects/node-config-loader/.travis.yml	/^language: node_js$/;"	function	line:1
+node_js	/home/yuferev/projects/node-config-loader/.travis.yml	/^node_js:$/;"	function	line:2
+_Promise	/home/yuferev/projects/node-config-loader/utils/nodePromisify.js	/^var _Promise = require("babel-runtime\/core-js\/promise")["default"];$/;"	variable	line:3
+slice	/home/yuferev/projects/node-config-loader/utils/nodePromisify.js	/^var slice = Array.prototype.slice;$/;"	variable	line:9
+nodePromisify	/home/yuferev/projects/node-config-loader/utils/nodePromisify.js	/^function nodePromisify(fn) {$/;"	function	line:11
+promised	/home/yuferev/projects/node-config-loader/utils/nodePromisify.js	/^    return function promised() {$/;"	function	line:14
+cb	/home/yuferev/projects/node-config-loader/utils/nodePromisify.js	/^            function cb(err, data) {$/;"	function	line:17
+nodePromisify	/home/yuferev/projects/node-config-loader/utils/nodePromisify.js	/^function nodePromisify(fn) {$/;"	function	line:11
+_Object$keys	/home/yuferev/projects/node-config-loader/utils/merge.js	/^var _Object$keys = require('babel-runtime\/core-js\/object\/keys')['default'];$/;"	variable	line:3
+mergeToTarget	/home/yuferev/projects/node-config-loader/utils/merge.js	/^function mergeToTarget(target, src) {$/;"	function	line:9
+mergeToTarget	/home/yuferev/projects/node-config-loader/utils/merge.js	/^function mergeToTarget(target, src) {$/;"	function	line:9
+merge	/home/yuferev/projects/node-config-loader/utils/merge.js	/^function merge() {$/;"	function	line:33
+merge	/home/yuferev/projects/node-config-loader/utils/merge.js	/^function merge() {$/;"	function	line:33
+_interopRequireDefault	/home/yuferev/projects/node-config-loader/utils/globby.js	/^var _interopRequireDefault = require('babel-runtime\/helpers\/interop-require-default')['default'];$/;"	variable	line:3
+_globby	/home/yuferev/projects/node-config-loader/utils/globby.js	/^var _globby = require('globby');$/;"	variable	line:9
+_globby2	/home/yuferev/projects/node-config-loader/utils/globby.js	/^var _globby2 = _interopRequireDefault(_globby);$/;"	variable	line:11
+_nodePromisify	/home/yuferev/projects/node-config-loader/utils/globby.js	/^var _nodePromisify = require('.\/nodePromisify');$/;"	variable	line:13
+_nodePromisify2	/home/yuferev/projects/node-config-loader/utils/globby.js	/^var _nodePromisify2 = _interopRequireDefault(_nodePromisify);$/;"	variable	line:15
+_interopRequireDefault	/home/yuferev/projects/node-config-loader/utils/readFile.js	/^var _interopRequireDefault = require('babel-runtime\/helpers\/interop-require-default')['default'];$/;"	variable	line:3
+_fs	/home/yuferev/projects/node-config-loader/utils/readFile.js	/^var _fs = require('fs');$/;"	variable	line:9
+_fs2	/home/yuferev/projects/node-config-loader/utils/readFile.js	/^var _fs2 = _interopRequireDefault(_fs);$/;"	variable	line:11
+_nodePromisify	/home/yuferev/projects/node-config-loader/utils/readFile.js	/^var _nodePromisify = require('.\/nodePromisify');$/;"	variable	line:13
+_nodePromisify2	/home/yuferev/projects/node-config-loader/utils/readFile.js	/^var _nodePromisify2 = _interopRequireDefault(_nodePromisify);$/;"	variable	line:15
+_Promise	/home/yuferev/projects/node-config-loader/utils/scanner.js	/^var _Promise = require('babel-runtime\/core-js\/promise')['default'];$/;"	variable	line:3
+_interopRequireDefault	/home/yuferev/projects/node-config-loader/utils/scanner.js	/^var _interopRequireDefault = require('babel-runtime\/helpers\/interop-require-default')['default'];$/;"	variable	line:5
+_readFile	/home/yuferev/projects/node-config-loader/utils/scanner.js	/^var _readFile = require('.\/readFile');$/;"	variable	line:12
+_readFile2	/home/yuferev/projects/node-config-loader/utils/scanner.js	/^var _readFile2 = _interopRequireDefault(_readFile);$/;"	variable	line:14
+_debug	/home/yuferev/projects/node-config-loader/utils/scanner.js	/^var _debug = require('debug');$/;"	variable	line:16
+_debug2	/home/yuferev/projects/node-config-loader/utils/scanner.js	/^var _debug2 = _interopRequireDefault(_debug);$/;"	variable	line:18
+_path	/home/yuferev/projects/node-config-loader/utils/scanner.js	/^var _path = require('path');$/;"	variable	line:20
+_path2	/home/yuferev/projects/node-config-loader/utils/scanner.js	/^var _path2 = _interopRequireDefault(_path);$/;"	variable	line:22
+basename	/home/yuferev/projects/node-config-loader/utils/scanner.js	/^function basename(p) {$/;"	function	line:26
+basename	/home/yuferev/projects/node-config-loader/utils/scanner.js	/^function basename(p) {$/;"	function	line:26
+makeScanner	/home/yuferev/projects/node-config-loader/utils/scanner.js	/^function makeScanner(_ref) {$/;"	function	line:30
+scanner	/home/yuferev/projects/node-config-loader/utils/scanner.js	/^    return function scanner(files) {$/;"	function	line:35
+makeScanner	/home/yuferev/projects/node-config-loader/utils/scanner.js	/^function makeScanner(_ref) {$/;"	function	line:30
+_Object$keys	/home/yuferev/projects/node-config-loader/utils/strMap.js	/^var _Object$keys = require('babel-runtime\/core-js\/object\/keys')['default'];$/;"	variable	line:3
+strMap	/home/yuferev/projects/node-config-loader/utils/strMap.js	/^function strMap(str, templateArgs) {$/;"	function	line:10
+strMap	/home/yuferev/projects/node-config-loader/utils/strMap.js	/^function strMap(str, templateArgs) {$/;"	function	line:10
+_Promise	/home/yuferev/projects/node-config-loader/readers/jsonReader.js	/^var _Promise = require('babel-runtime\/core-js\/promise')['default'];$/;"	variable	line:3
+_interopRequireDefault	/home/yuferev/projects/node-config-loader/readers/jsonReader.js	/^var _interopRequireDefault = require('babel-runtime\/helpers\/interop-require-default')['default'];$/;"	variable	line:5
+_path	/home/yuferev/projects/node-config-loader/readers/jsonReader.js	/^var _path = require('path');$/;"	variable	line:12
+_path2	/home/yuferev/projects/node-config-loader/readers/jsonReader.js	/^var _path2 = _interopRequireDefault(_path);$/;"	variable	line:14
+makeJsonReader	/home/yuferev/projects/node-config-loader/readers/jsonReader.js	/^function makeJsonReader() {$/;"	function	line:16
+jsonReader	/home/yuferev/projects/node-config-loader/readers/jsonReader.js	/^    return function jsonReader(file) {$/;"	function	line:17
+makeJsonReader	/home/yuferev/projects/node-config-loader/readers/jsonReader.js	/^function makeJsonReader() {$/;"	function	line:16
+_Promise	/home/yuferev/projects/node-config-loader/readers/yamlReader.js	/^var _Promise = require("babel-runtime\/core-js\/promise")["default"];$/;"	variable	line:9
+makeYamlReader	/home/yuferev/projects/node-config-loader/readers/yamlReader.js	/^function makeYamlReader(Yaml) {$/;"	function	line:16
+yamlReader	/home/yuferev/projects/node-config-loader/readers/yamlReader.js	/^    return function yamlReader(file) {$/;"	function	line:19
+makeYamlReader	/home/yuferev/projects/node-config-loader/readers/yamlReader.js	/^function makeYamlReader(Yaml) {$/;"	function	line:16
+_Promise	/home/yuferev/projects/node-config-loader/readers/strategyReader.js	/^var _Promise = require('babel-runtime\/core-js\/promise')['default'];$/;"	variable	line:3
+_interopRequireDefault	/home/yuferev/projects/node-config-loader/readers/strategyReader.js	/^var _interopRequireDefault = require('babel-runtime\/helpers\/interop-require-default')['default'];$/;"	variable	line:5
+_path	/home/yuferev/projects/node-config-loader/readers/strategyReader.js	/^var _path = require('path');$/;"	variable	line:12
+_path2	/home/yuferev/projects/node-config-loader/readers/strategyReader.js	/^var _path2 = _interopRequireDefault(_path);$/;"	variable	line:14
+makeStrategyReader	/home/yuferev/projects/node-config-loader/readers/strategyReader.js	/^function makeStrategyReader() {$/;"	function	line:21
+strategyReader	/home/yuferev/projects/node-config-loader/readers/strategyReader.js	/^    return function strategyReader(file) {$/;"	function	line:24
+makeStrategyReader	/home/yuferev/projects/node-config-loader/readers/strategyReader.js	/^function makeStrategyReader() {$/;"	function	line:21
+_Promise	/home/yuferev/projects/node-config-loader/readers/tomlReader.js	/^var _Promise = require('babel-runtime\/core-js\/promise')['default'];$/;"	variable	line:9
+makeTomlReader	/home/yuferev/projects/node-config-loader/readers/tomlReader.js	/^function makeTomlReader(Toml) {$/;"	function	line:16
+tomlReader	/home/yuferev/projects/node-config-loader/readers/tomlReader.js	/^    return function tomlReader(file) {$/;"	function	line:17
+makeTomlReader	/home/yuferev/projects/node-config-loader/readers/tomlReader.js	/^function makeTomlReader(Toml) {$/;"	function	line:16
+Node config loader	/home/yuferev/projects/node-config-loader/README.md	/^# Node config loader$/;"	function	line:1
+Features	/home/yuferev/projects/node-config-loader/README.md	/^## Features$/;"	function	line:5
+Usage	/home/yuferev/projects/node-config-loader/README.md	/^## Usage$/;"	function	line:12
+As common lib	/home/yuferev/projects/node-config-loader/README.md	/^### As common lib$/;"	function	line:14
+As webpack loader	/home/yuferev/projects/node-config-loader/README.md	/^### As webpack loader$/;"	function	line:75
+subStrFrom	/home/yuferev/projects/node-config-loader/src/filters/nodeFilter.js	/^function subStrFrom(str, fromStr) {$/;"	function	line:20
+normalize	/home/yuferev/projects/node-config-loader/src/filters/nodeFilter.js	/^    function normalize(relFile) {$/;"	function	line:37
+nodeFilter	/home/yuferev/projects/node-config-loader/src/filters/nodeFilter.js	/^    return function nodeFilter(relFiles) {$/;"	function	line:41
+webpackLoader	/home/yuferev/projects/node-config-loader/src/webpack.js	/^export default function webpackLoader(mask) {$/;"	function	line:5
+makeCommonMerger	/home/yuferev/projects/node-config-loader/src/common.js	/^export default function makeCommonMerger(options) {$/;"	function	line:4
+commonMerger	/home/yuferev/projects/node-config-loader/src/common.js	/^    return function commonMerger(mask, globbyOptions) {$/;"	function	line:7
+nodePromisify	/home/yuferev/projects/node-config-loader/src/utils/nodePromisify.js	/^export default function nodePromisify(fn, self = null) {$/;"	function	line:3
+promised	/home/yuferev/projects/node-config-loader/src/utils/nodePromisify.js	/^    return function promised() {$/;"	function	line:4
+cb	/home/yuferev/projects/node-config-loader/src/utils/nodePromisify.js	/^            function cb(err, data) {$/;"	function	line:7
+mergeToTarget	/home/yuferev/projects/node-config-loader/src/utils/merge.js	/^function mergeToTarget(target, src) {$/;"	function	line:1
+merge	/home/yuferev/projects/node-config-loader/src/utils/merge.js	/^export default function merge() {$/;"	function	line:25
+basename	/home/yuferev/projects/node-config-loader/src/utils/scanner.js	/^function basename(p) {$/;"	function	line:6
+makeScanner	/home/yuferev/projects/node-config-loader/src/utils/scanner.js	/^export default function makeScanner({filter, merge, readFile}) {$/;"	function	line:10
+scanner	/home/yuferev/projects/node-config-loader/src/utils/scanner.js	/^    return function scanner(files) {$/;"	function	line:11
+strMap	/home/yuferev/projects/node-config-loader/src/utils/strMap.js	/^export default function strMap(str, templateArgs) {$/;"	function	line:1
+makeJsonReader	/home/yuferev/projects/node-config-loader/src/readers/jsonReader.js	/^export default function makeJsonReader() {$/;"	function	line:3
+jsonReader	/home/yuferev/projects/node-config-loader/src/readers/jsonReader.js	/^    return function jsonReader(file) {$/;"	function	line:4
+makeYamlReader	/home/yuferev/projects/node-config-loader/src/readers/yamlReader.js	/^export default function makeYamlReader(Yaml, options = {}) {$/;"	function	line:7
+yamlReader	/home/yuferev/projects/node-config-loader/src/readers/yamlReader.js	/^    return function yamlReader(file) {$/;"	function	line:8
+makeStrategyReader	/home/yuferev/projects/node-config-loader/src/readers/strategyReader.js	/^export default function makeStrategyReader(adapters = {}) {$/;"	function	line:7
+strategyReader	/home/yuferev/projects/node-config-loader/src/readers/strategyReader.js	/^    return function strategyReader(file) {$/;"	function	line:8
+makeTomlReader	/home/yuferev/projects/node-config-loader/src/readers/tomlReader.js	/^export default function makeTomlReader(Toml) {$/;"	function	line:7
+tomlReader	/home/yuferev/projects/node-config-loader/src/readers/tomlReader.js	/^    return function tomlReader(file) {$/;"	function	line:8
+example	/home/yuferev/projects/node-config-loader/src/__tests__/config/example#dev.yaml	/^example:$/;"	function	line:1
+proc	/home/yuferev/projects/node-config-loader/src/__tests__/config/example#dev.yaml	/^  proc: example-dev-yaml$/;"	function	line:2
+name	/home/yuferev/projects/node-config-loader/src/__tests__/config/example#dev.yaml	/^  name: test-yaml$/;"	function	line:3
+test	/home/yuferev/projects/node-config-loader/src/__tests__/config/example#dev.yaml	/^  test:$/;"	function	line:5
+p2	/home/yuferev/projects/node-config-loader/src/__tests__/config/example#dev.yaml	/^    p2: 444$/;"	function	line:6
+_interopRequireDefault	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^var _interopRequireDefault = require('babel-runtime\/helpers\/interop-require-default')['default'];$/;"	variable	line:3
+_jsYaml	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^var _jsYaml = require('js-yaml');$/;"	variable	line:10
+_jsYaml2	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^var _jsYaml2 = _interopRequireDefault(_jsYaml);$/;"	variable	line:12
+_toml	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^var _toml = require('toml');$/;"	variable	line:14
+_toml2	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^var _toml2 = _interopRequireDefault(_toml);$/;"	variable	line:16
+_os	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^var _os = require('os');$/;"	variable	line:18
+_os2	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^var _os2 = _interopRequireDefault(_os);$/;"	variable	line:20
+_utilsMerge	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^var _utilsMerge = require('..\/utils\/merge');$/;"	variable	line:22
+_utilsMerge2	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^var _utilsMerge2 = _interopRequireDefault(_utilsMerge);$/;"	variable	line:24
+_utilsScanner	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^var _utilsScanner = require('..\/utils\/scanner');$/;"	variable	line:26
+_utilsScanner2	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^var _utilsScanner2 = _interopRequireDefault(_utilsScanner);$/;"	variable	line:28
+_readersStrategyReader	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^var _readersStrategyReader = require('..\/readers\/strategyReader');$/;"	variable	line:30
+_readersStrategyReader2	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^var _readersStrategyReader2 = _interopRequireDefault(_readersStrategyReader);$/;"	variable	line:32
+_readersYamlReader	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^var _readersYamlReader = require('..\/readers\/yamlReader');$/;"	variable	line:34
+_readersYamlReader2	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^var _readersYamlReader2 = _interopRequireDefault(_readersYamlReader);$/;"	variable	line:36
+_readersTomlReader	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^var _readersTomlReader = require('..\/readers\/tomlReader');$/;"	variable	line:38
+_readersTomlReader2	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^var _readersTomlReader2 = _interopRequireDefault(_readersTomlReader);$/;"	variable	line:40
+_readersJsonReader	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^var _readersJsonReader = require('..\/readers\/jsonReader');$/;"	variable	line:42
+_readersJsonReader2	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^var _readersJsonReader2 = _interopRequireDefault(_readersJsonReader);$/;"	variable	line:44
+_filtersNodeFilter	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^var _filtersNodeFilter = require('..\/filters\/nodeFilter');$/;"	variable	line:46
+_filtersNodeFilter2	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^var _filtersNodeFilter2 = _interopRequireDefault(_filtersNodeFilter);$/;"	variable	line:48
+polyScan	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^function polyScan(_ref) {$/;"	function	line:50
+polyScan	/home/yuferev/projects/node-config-loader/scan/polyScan.js	/^function polyScan(_ref) {$/;"	function	line:50
+_defaults	/home/yuferev/projects/node-config-loader/index.js	/^var _defaults = require('babel-runtime\/helpers\/defaults')['default'];$/;"	variable	line:3
+_interopExportWildcard	/home/yuferev/projects/node-config-loader/index.js	/^var _interopExportWildcard = require('babel-runtime\/helpers\/interop-export-wildcard')['default'];$/;"	variable	line:5
+_common	/home/yuferev/projects/node-config-loader/index.js	/^var _common = require('.\/common');$/;"	variable	line:11
+_interopRequireDefault	/home/yuferev/projects/node-config-loader/__tests__/commonTest.js	/^var _interopRequireDefault = require('babel-runtime\/helpers\/interop-require-default')['default'];$/;"	variable	line:3
+_common	/home/yuferev/projects/node-config-loader/__tests__/commonTest.js	/^var _common = require('..\/common');$/;"	variable	line:5
+_common2	/home/yuferev/projects/node-config-loader/__tests__/commonTest.js	/^var _common2 = _interopRequireDefault(_common);$/;"	variable	line:7
+_powerAssert	/home/yuferev/projects/node-config-loader/__tests__/commonTest.js	/^var _powerAssert = require('power-assert');$/;"	variable	line:9
+_powerAssert2	/home/yuferev/projects/node-config-loader/__tests__/commonTest.js	/^var _powerAssert2 = _interopRequireDefault(_powerAssert);$/;"	variable	line:11
+describe	/home/yuferev/projects/node-config-loader/__tests__/commonTest.js	/^describe('commonMerger', function () {$/;"	function	line:13
+it	/home/yuferev/projects/node-config-loader/__tests__/commonTest.js	/^    it('should merge server dev environments', function () {$/;"	function	line:14
+it	/home/yuferev/projects/node-config-loader/__tests__/commonTest.js	/^    it('should merge client dev environments', function () {$/;"	function	line:55

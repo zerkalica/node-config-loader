@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/utils/readFile.js"],"names":[],"mappings":";;;;;;;;;;;;;;;;kBAGe,6BAAc,aAAG,QAAQ,eAAK","file":"readFile.js","sourcesContent":["import fs from 'fs'\nimport nodePromisify from './nodePromisify'\n\nexport default nodePromisify(fs.readFile, fs)\n"]}
