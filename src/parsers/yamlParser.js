@@ -6,10 +6,10 @@
  */
 export default function makeYamlParser(Yaml, options = {}) {
     return function yamlParser(file) {
-        return new Promise((resolve, reject) => {
+        return new Promise(resolve => {
             resolve(Yaml.safeLoad(file.contents.toString(), options))
         }).catch(e => {
-            throw new Error(file.path + " \n" + e.message)
+            throw new Error(file.path + ' \n' + e.message)
         })
     }
 }

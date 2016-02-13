@@ -1,8 +1,6 @@
-import path from 'path'
-
 export default function makeJsonParser() {
     return function jsonParser(file) {
-        return new Promise((resolve, reject) => {
+        return new Promise(resolve => {
             resolve(JSON.parse(file.contents.toString()))
         })
         .catch(e => {

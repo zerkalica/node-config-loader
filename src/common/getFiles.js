@@ -1,10 +1,7 @@
-import globby from '../utils/globby'
+import globby from 'globby'
 import nodeFilter from '../filters/nodeFilter'
 
-export default function getFiles(opts) {
-    /* eslint-disable no-param-reassign */
-    opts = opts || {}
-    /* eslint-enable no-param-reassign */
+export default function getFiles(opts = {}) {
     const {instance, env, hostname, tagSeparator} = opts
 
     return globby(opts.mask, {...opts, nodir: true})

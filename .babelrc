@@ -1,7 +1,8 @@
 {
-    "stage": 0,
-    "optional": ["runtime", "es7.decorators"],
-    "highlightCode": false,
+    "presets": [
+        "es2015",
+        "stage-0"
+    ],
     "plugins": [
         "babel-plugin-espower"
     ]
