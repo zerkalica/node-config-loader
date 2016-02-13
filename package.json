@@ -11,7 +11,7 @@
     "postversion": "git push && git push --tags",
     "precommit": "exit 0",
     "update": "ncu -ua && npm install",
-    "clean": "rm -rf coverage common filters parsers utils __tests__ *.map *.js",
+    "clean": "rm -rf coverage common filters parsers readers scan utils __tests__ *.map *.js",
     "build": "npm run clean && babel src --source-maps --out-dir .",
     "build.dev": "npm run build -- --watch",
     "lint": "eslint ./src",

@@ -9,6 +9,7 @@ import scan from './common/scan'
 
 const debug = __debug('node-config-loader:webpackLoader:debug')
 
+
 export default function webpackLoader(source) {
     if (this.cacheable) {
         this.cacheable()
@@ -49,3 +50,5 @@ export default function webpackLoader(source) {
         })
         .catch(err => cb(err))
 }
+
+module.exports = webpackLoader

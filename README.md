@@ -3,7 +3,6 @@ Node config loader [![Build Status](https://secure.travis-ci.org/zerkalica/node-
 
 [![NPM](https://nodei.co/npm/node-config-loader.png?downloads=true&stars=true)](https://nodei.co/npm/node-config-loader/)
 
-
 Scan directories, load, parse to js object and merge many configs into single file/object.
 
 -	Highly customizable and composable: each component is a pure function and exposed to public: compose you own loaders
@@ -97,7 +96,7 @@ Isomorphic friendly сlient with run-time config
 
 ```js
 // getConfig.js
-import config from 'node-config-loader/webpack!../conf/.configloaderrc'
+import config from '../conf/.configloaderrc'
 import merge from 'node-config-loader/utils/merge'
 
 function getRuntimeConfig({settings, location, referrer}) {

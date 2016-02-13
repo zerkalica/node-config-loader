@@ -18,5 +18,6 @@ build
 
 # Atom tags
 .tags
+/tags
 readers
 scan
