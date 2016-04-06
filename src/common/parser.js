@@ -5,6 +5,7 @@ import strategyParser from '../parsers/strategyParser'
 import yamlParser from '../parsers/yamlParser'
 import tomlParser from '../parsers/tomlParser'
 import jsonParser from '../parsers/jsonParser'
+import jsParser from '../parsers/jsParser'
 
 const _yaml = yamlParser(yaml)
 const _toml = tomlParser(toml)
@@ -14,5 +15,6 @@ export default strategyParser({
     yaml: _yaml,
     tml: _toml,
     toml: _toml,
-    json: jsonParser()
+    json: jsonParser(),
+    js: jsParser()
 })
