@@ -13,7 +13,8 @@ describe('commonMerger', () => {
                 },
                 test2: {
                     p2: 123
-                }
+                },
+                from: 'js'
             },
             app1: {
                 arr: [
@@ -29,7 +30,7 @@ describe('commonMerger', () => {
         }
 
         return loadConfig({
-            mask: [__dirname + '/{config,cfg/a}/**/*.{toml,tml,yaml,yml,json}'],
+            mask: [__dirname + '/{config,cfg/a}/**/*.{toml,tml,yaml,yml,json,js}'],
             instance: 'server',
             env: 'dev',
             hostname: 'testhost',
