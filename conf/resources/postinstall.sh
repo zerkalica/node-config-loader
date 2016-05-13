@@ -1,12 +1,6 @@
 #!/bin/sh
 
 PROJECT_NAME=$1
-
-realpath() {
-    [[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
-}
-
-
 CWD=$(realpath $(dirname $0))
 
 if [ "$PROJECT_NAME" = "" ] ; then
@@ -20,5 +14,3 @@ if [ ! -e "$(pwd)/package.json" ] ; then
 fi
 
 cp -f $CWD/git-hooks/* .git/hooks
-
-# [ -L "node_modules/$PROJECT_NAME" ] || ln -s ../src node_modules/$PROJECT_NAME
