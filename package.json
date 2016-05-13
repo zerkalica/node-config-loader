@@ -65,6 +65,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.8.0",
     "eslint-config-airplus": "^1.1.9",
+    "flow-bin": "^0.24.2",
     "mocha": "^2.4.5",
     "power-assert": "^1.4.1"
   },
