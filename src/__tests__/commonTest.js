@@ -1,4 +1,4 @@
-import loadConfig from '../'
+import {loadConfig} from '../'
 import assert from 'power-assert'
 
 describe('commonMerger', () => {
@@ -14,7 +14,11 @@ describe('commonMerger', () => {
                 test2: {
                     p2: 123
                 },
-                from: 'js'
+                from: 'js',
+                arrmerge: [
+                    'test',
+                    'test2'
+                ]
             },
             app1: {
                 arr: [
@@ -49,7 +53,11 @@ describe('commonMerger', () => {
                 test: {
                     p2: 444,
                     p3: 534
-                }
+                },
+                arrmerge: [
+                    'test',
+                    'test2'
+                ]
             },
             the: {
                 test_string: 'You\'ll hate me after this - #'

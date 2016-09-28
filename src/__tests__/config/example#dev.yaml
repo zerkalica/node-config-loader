@@ -4,3 +4,8 @@ example:
 
   test:
     p2: 444
+
+  __push__: ['arrmerge']
+  arrmerge:
+    -
+      test

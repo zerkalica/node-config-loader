@@ -1,11 +1,13 @@
+// @flow
+
 import yaml from 'js-yaml'
 import toml from 'toml'
 
-import strategyParser from '../parsers/strategyParser'
-import yamlParser from '../parsers/yamlParser'
-import tomlParser from '../parsers/tomlParser'
-import jsonParser from '../parsers/jsonParser'
-import jsParser from '../parsers/jsParser'
+import strategyParser from './strategyParser'
+import yamlParser from './yamlParser'
+import tomlParser from './tomlParser'
+import jsonParser from './jsonParser'
+import jsParser from './jsParser'
 
 const _yaml = yamlParser(yaml)
 const _toml = tomlParser(toml)

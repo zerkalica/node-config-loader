@@ -1,7 +1,11 @@
-export default function makeJsParser() {
-    return function jsParser(file) {
+// @flow
+
+import type {FileRec, Parser} from '../interfaces'
+
+export default function makeJsParser(): Parser {
+    return function jsParser(file: FileRec): Object {
         return new Promise(resolve => {
-            resolve(require(file.path))
+            resolve((require: any)(file.path))
         })
         .catch(e => {
             e.message = file.path + ': ' + e.message

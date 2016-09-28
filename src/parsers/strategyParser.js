@@ -1,12 +1,18 @@
+// @flow
+
+import type {FileRec, Parser} from '../interfaces'
+
 import path from 'path'
 
 /**
  * StrategyAdapter
  * @param {Adapter[file_extension]} adapters
  */
-export default function makeStrategyParser(adapters = {}) {
-    return function strategyParser(file) {
-        const ext = path.extname(file.path).substring(1)
+export default function makeStrategyParser(
+    adapters?: {[ext: string]: Parser} = {}
+): Parser {
+    return function strategyParser(file: FileRec): Object {
+        const ext: string = path.extname(file.path).substring(1)
 
         return new Promise((resolve, reject) => {
             if (!adapters[ext]) {

@@ -1,2 +1,3 @@
+/* eslint-disable */
 'use strict';
-module.exports = require('./dist/webpack');
+module.exports = require('./dist/webpack')

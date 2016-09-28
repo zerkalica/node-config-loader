@@ -7,10 +7,54 @@ Scan directories, load, parse to js object and merge many configs into single fi
 
 -	Highly customizable and composable: each component is a pure function and exposed to public: compose you own loaders
 -	Used [globby](https://github.com/sindresorhus/globby) for files matching
--	Used promises via [babel-runtime](https://babeljs.io/docs/usage/runtime/)
 -	Compatible with [lorenwest node-config](https://github.com/lorenwest/node-config/wiki/Configuration-Files) file loading scheme, but each file name can be prefixed by '#' separator
 -	Default loader supports json and yml files via [nodeca js-yaml](https://github.com/nodeca/js-yaml) (can be overrided)
 -	Live reload support via webpack loader
+
+## Config merge example
+
+```yaml
+# input1#dev.yaml
+ns:
+    to:
+        name: test
+testArr:
+    - t1
+    - t2
+__push__: [testArray2]
+testArray2:
+    - test1
+    - test2
+```
+
+```yaml
+# input2#dev.yaml
+
+ns:
+    to:
+        email: test-email
+testArr:
+    - t3
+testArray2:
+    - test3
+```
+
+merged input1 + input2:
+
+```yaml
+#output.yaml
+
+ns:
+    to:
+        name: test
+        email: test-email
+testArr:
+    - t3
+testArray2:
+    - test1
+    - test2
+    - test3
+```
 
 Usage
 =====
@@ -20,18 +64,22 @@ As common lib
 
 ```js
 //simple.js
-import loader from 'node-config-loader'
+import {loadConfig} from 'node-config-loader'
 import os from 'os'
 
-loader({
-    mask: [__dirname + '/config/**/*.{json,yml,tml}'],
+loadConfig({
+    mask: [
+        `${__dirname}/config/**/*.{json,yml,tml}`
+        `/etc/myapp.d/**/*.{json,yml,tml}`
+        `${process.env.HOME}/.config/myapp/**/*.{json,yml,tml}`
+    ],
     instance = 'server',
     env = process.env.NODE_ENV,
     hostname = os.hostname(),
     tagSeparator = '#'
 })
-.then(config => console.log(config))
-.catch(err => config.error(err.message))
+    .then(config => console.log(config))
+    .catch(err => config.error(err.message))
 ```
 
 As webpack loader
@@ -91,13 +139,24 @@ module.exports = {
 }
 ```
 
+## Flowtype
+
+npm install --save empty
+
+.flowconfig
+
+```ini
+[options]
+module.name_mapper='.*\(\.configloaderrc\)' -> 'empty/object'
+```
+
 Isomorphic friendly сlient with run-time config
 -----------------------------------------------
 
 ```js
 // getConfig.js
 import config from '../conf/.configloaderrc'
-import merge from 'node-config-loader/utils/merge'
+import {merge} from 'node-config-loader'
 
 function getRuntimeConfig({settings, location, referrer}) {
     return {
@@ -135,4 +194,80 @@ const config = getConfig({
 
 // config
 init(config)
+```
+
+## interfaces
+
+```js
+// @flow
+
+function merge(...objects: Object[]): Object
+function strMap(strs: string, templateArgs: {[id: string]: string}): string
+
+interface CreateScannerOpts {
+    merge?: (acc: Object, src: Object) => Object;
+    parser?: (data: FileRec) => Promise<Object>;
+    readFile?: (fileName: string) => Promise<Buffer>;
+}
+
+type Scanner = (files: string[]) => Promise<Object>
+
+function createScanner(opts?: CreateScannerOpts): Scanner
+
+interface CreateNodeFilterOpts {
+    instance?: string;
+    hostname?: string;
+    tagSeparator?: string;
+    env?: string;
+    templates?: string[];
+}
+function createNodeFilter(opts: CreateNodeFilterOpts): (files: string[]) => string[]
+
+interface GetFilesOptions extends CreateNodeFilterOpts {
+    mask: string[];
+    glob?: {
+        cwd?: string;
+        root?: string;
+        dot?: string;
+        nomount?: boolean;
+        mark?: boolean;
+        nosort?: boolean;
+        stat?: boolean;
+        readdir?: boolean;
+        silent?: boolean;
+        statCache?: Object;
+        symlinks?: Object;
+        debug?: boolean;
+        nonull?: boolean;
+        nounique?: boolean;
+        nobrace?: boolean;
+        noglobstar?: boolean;
+        noext?: boolean;
+        nocase?: boolean;
+        matchBase?: boolean;
+        nodir?: boolean;
+        ignore?: string;
+        follow?: boolean;
+        realpath?: boolean;
+        absolute?: boolean;
+    }
+}
+function getFiles(opts: GetFilesOptions): Promise<string[]>;
+
+interface LoadConfigOptions extends GetFilesOptions, CreateScannerOpts {
+    mask: string[];
+
+    instance?: string;
+    hostname?: string;
+    tagSeparator?: string;
+    env?: string;
+    templates?: string[];
+
+    glob?: Object;
+
+    merge?: (acc: Object, src: Object) => Object;
+    parser?: (data: FileRec) => Promise<Object>;
+    readFile?: (fileName: string) => Promise<Buffer>;
+}
+function loadConfig(opts: LoadConfigOptions): Promise<Object>
 ```

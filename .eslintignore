@@ -1,7 +1,0 @@
-/*.js
-**/flow-typed/*
-/__tests__
-/common
-/filters
-/parsers
-/utils

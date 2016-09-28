@@ -1,10 +1,14 @@
-const slice = Array.prototype.slice
+// @flow
 
-export default function nodePromisify(fn, self = null) {
-    return function promised() {
-        const args = slice.call(arguments)
+type CbFn<V> = (err?: Error, data: V) => void
+
+export default function nodePromisify<R>(
+    fn: (...args: any[]) => void,
+    self?: ?Object = null
+): (...args: any[]) => Promise<R> {
+    return function promised(...args: any[]) {
         return new Promise((resolve, reject) => {
-            function cb(err, data) {
+            function cb(err?: Error, data: R): void {
                 if (err) {
                     reject(err)
                 } else {

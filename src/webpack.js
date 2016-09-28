@@ -1,16 +1,20 @@
+// @flow
+
 import loaderUtils from 'loader-utils'
 import path from 'path'
 import __debug from 'debug'
 import fr from 'find-root'
 
 import strMap from './utils/strMap'
-import getFiles from './common/getFiles'
-import scan from './common/scan'
+import getFiles from './core/getFiles'
+import createScanner from './core/createScanner'
+import type {Scanner} from './core/createScanner'
 
 const debug = __debug('node-config-loader:webpackLoader:debug')
 
+const scan: Scanner = createScanner()
 
-export default function webpackLoader(source) {
+function webpackLoader(source: string): void {
     if (this.cacheable) {
         this.cacheable()
     }
@@ -19,7 +23,6 @@ export default function webpackLoader(source) {
     const params = JSON.parse(source)
     const query = loaderUtils.parseQuery(this.query) || {}
     const opts = {
-        nodir: true,
         ...params,
         ...query,
         ...this.options.configLoader || {}
@@ -40,8 +43,8 @@ export default function webpackLoader(source) {
     }
 
     getFiles(opts)
-        .then(files => {
-            files.forEach(file => this.addDependency(file))
+        .then((files: string[]) => {
+            files.forEach((file: string) => this.addDependency(file))
             return scan(files)
         })
         .then(value => {
