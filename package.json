@@ -1,6 +1,6 @@
 {
   "name": "node-config-loader",
-  "version": "2.1.1",
+  "version": "3.0.0",
   "description": "Scan directories and loads json and yaml files",
   "config": {
     "builddir": "."
