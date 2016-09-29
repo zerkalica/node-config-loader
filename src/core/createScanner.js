@@ -3,7 +3,7 @@
 import __debug from 'debug'
 import path from 'path'
 
-import type {FileRec} from 'node-config-loader/interfaces'
+import type {FileRec} from '../interfaces'
 
 import defMerge from '../utils/merge'
 import defParser from '../parsers'
