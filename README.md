@@ -201,7 +201,7 @@ init(config)
 ```js
 // @flow
 
-function merge(...objects: Object[]): Object
+function merge(objects: Object[]): Object
 function strMap(strs: string, templateArgs: {[id: string]: string}): string
 
 interface CreateScannerOpts {

@@ -34,7 +34,7 @@ describe('commonMerger', () => {
         }
 
         return loadConfig({
-            mask: [__dirname + '/{config,cfg/a}/**/*.{toml,tml,yaml,yml,json,js}'],
+            mask: [__dirname + '/_main/**/*.{toml,tml,yaml,yml,json}', __dirname + '/{config,cfg/a}/**/*.{toml,tml,yaml,yml,json,js}'],
             instance: 'server',
             env: 'dev',
             hostname: 'testhost',
@@ -65,7 +65,10 @@ describe('commonMerger', () => {
         }
 
         return loadConfig({
-            mask: [__dirname + '/config/**/*.{toml,tml,yaml,yml,json}'],
+            mask: [
+                __dirname + '/_main/**/*.{toml,tml,yaml,yml,json}',
+                __dirname + '/config/**/*.{toml,tml,yaml,yml,json}'
+            ],
             instance: 'client',
             env: 'dev',
             hostname: 'testhost',
