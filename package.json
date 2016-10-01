@@ -24,10 +24,10 @@
   },
   "files": [
     "*.js",
+    "*.flow",
     "*.map",
     "flow-typed",
     "dist",
-    "flow",
     "src",
     ".flowconfig",
     "README.md",
