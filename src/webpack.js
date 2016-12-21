@@ -48,7 +48,6 @@ function webpackLoader(source: string): void {
             return scan(files)
         })
         .then(value => {
-            this.value = [value]
             cb(null, 'module.exports = ' + JSON.stringify(value, undefined, '\t') + ';')
         })
         .catch(err => cb(err))
