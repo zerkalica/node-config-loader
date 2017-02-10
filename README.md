@@ -125,10 +125,16 @@ Via Webpack config
 ```js
 // webpack.config.js
 module.exports = {
-    configLoader: {
-        env: args.env || 'dev',
-        instance: args.instance || 'client'
-    },
+    plugins: [
+        new LoaderOptionsPlugin({
+            options: {
+                configLoader: {
+                    env: isProduction ? 'prod' : 'dev',
+                    instance: process.env.APP_INSTANCE || 'client'
+                }
+            }
+        }),
+    ],
     module: {
         loaders: [
             {
