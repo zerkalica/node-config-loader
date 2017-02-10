@@ -1,7 +1,3 @@
-[ignore]
-.*/node_modules/config.*
-.*/node_modules/npm.*
-
 [options]
 munge_underscores=true
 esproposal.decorators=ignore
