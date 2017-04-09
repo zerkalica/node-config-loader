@@ -21,7 +21,7 @@ function webpackLoader(source: string): void {
     const rp = path.dirname(this.resourcePath)
     const cb = this.async()
     const params = JSON.parse(source)
-    const query = loaderUtils.parseQuery(this.query) || {}
+    const query = loaderUtils.getOptions(this) || {}
     const opts = {
         ...params,
         ...query,
