@@ -25,7 +25,7 @@ function webpackLoader(source: string): void {
     const opts = {
         ...params,
         ...query,
-        ...this.options.configLoader || {}
+        ...(this.options && this.options.configLoader) || {}
     }
 
     const templateArgs = {
